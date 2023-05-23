@@ -6,6 +6,7 @@ namespace MyGame
     public partial class Form1 : Form
     {
         System.Media.SoundPlayer music = new System.Media.SoundPlayer();
+        
 
         public enum Color
         {
@@ -23,6 +24,7 @@ namespace MyGame
         float instaJump = 12f;
         float reloadDoubleJump = 0;
         int jumpmax = 2;
+        int MaxScore = 0;
 
         int floorCounter = 1;
 
@@ -43,7 +45,7 @@ namespace MyGame
 
         public void Init()
         {
-            music.SoundLocation = "D:\\gamecourse\\dubstep.wav";
+            music.SoundLocation = $"{System.Environment.CurrentDirectory}\\gamecourse\\dubstep.wav";
             music.Play();
             music.PlayLooping();
 
@@ -82,7 +84,10 @@ namespace MyGame
 
         private void Update(object sender, EventArgs e)
         {
-            label1.Text = "Score: " + player.Score.ToString();
+            if (MaxScore != 0)
+                label1.Text = "Score: " + player.Score.ToString() + " ,Record: " + MaxScore.ToString();
+            else
+                label1.Text = "Score: " + player.Score.ToString();
 
             player.Animation();
             //if (player.onPlatform)
@@ -164,6 +169,7 @@ namespace MyGame
                 label1.Text = "Score: " + player.Score.ToString() + "   GAME OVER!";
                 timer1.Stop();
                 music.Stop();
+                MaxScore = Math.Max(player.Score, MaxScore);
             }
             Invalidate();
         }

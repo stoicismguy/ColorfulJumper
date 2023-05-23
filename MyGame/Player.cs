@@ -46,7 +46,7 @@ namespace MyGame
             GravityValue = 0.1f;
             Score = 0;
             SetBlueColor();
-            playerImg = new Bitmap($"D:\\gamecourse\\player_blue1.png");
+            playerImg = new Bitmap($"{System.Environment.CurrentDirectory}\\gamecourse\\player_blue1.png");
             for (var i = 0; i < particleCount; i++)
             {
                 this.particles.Add(new Particle(x, y, animStyle, (isJump || !onPlatform)));
@@ -82,11 +82,11 @@ namespace MyGame
             {
                 if (this.color == MyGame.Form1.Color.Red)
                 {
-                    this.playerImg = new Bitmap($"D:\\gamecourse\\player_red_jump{animStyle + 1}.png");
+                    this.playerImg = new Bitmap($"{System.Environment.CurrentDirectory}\\gamecourse\\player_red_jump{animStyle + 1}.png");
                 }
                 else
                 {
-                    this.playerImg = new Bitmap($"D:\\gamecourse\\player_blue_jump{animStyle + 1}.png");
+                    this.playerImg = new Bitmap($"{System.Environment.CurrentDirectory}\\gamecourse\\player_blue_jump{animStyle + 1}.png");
                 }
             }           
             if (animStyle < 2)
@@ -97,11 +97,11 @@ namespace MyGame
         {
             if (this.color == MyGame.Form1.Color.Red)
             {
-                this.playerImg = new Bitmap($"D:\\gamecourse\\player_red{animStyle + 1}.png");              
+                this.playerImg = new Bitmap($"{System.Environment.CurrentDirectory}\\gamecourse\\player_red{animStyle + 1}.png");              
             }
             else
             {
-                this.playerImg = new Bitmap($"D:\\gamecourse\\player_blue{animStyle + 1}.png");
+                this.playerImg = new Bitmap($"{System.Environment.CurrentDirectory}\\gamecourse\\player_blue{animStyle + 1}.png");
             }
             if (animStyle == 4)
                 animStyle = 0;

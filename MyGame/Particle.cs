@@ -18,9 +18,9 @@ namespace MyGame
             this.X = x;
             this.Y = y;
             if (isJump || animStyle < 3)
-                this.particleImg = new Bitmap($"D:\\gamecourse\\particles\\player_jump3.png");
+                this.particleImg = new Bitmap($"{System.Environment.CurrentDirectory}\\gamecourse\\particles\\player_jump3.png");
             else
-                this.particleImg = new Bitmap($"D:\\gamecourse\\particles\\player_run1.png");
+                this.particleImg = new Bitmap($"{System.Environment.CurrentDirectory}\\gamecourse\\particles\\player_run1.png");
         }
 
         private Image SetAlpha(Bitmap image)

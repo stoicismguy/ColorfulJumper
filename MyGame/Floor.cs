@@ -34,13 +34,13 @@ namespace MyGame
         public void SetRedColor()
         {
             color = MyGame.Form1.Color.Red;
-            floorImg = new Bitmap("D:\\gamecourse\\floor_red.png");
+            floorImg = new Bitmap($"{System.Environment.CurrentDirectory}\\gamecourse\\floor_red.png");
         }
 
         public void SetBlueColor()
         {
             color = MyGame.Form1.Color.Blue;
-            floorImg = new Bitmap("D:\\gamecourse\\floor_blue.png");
+            floorImg = new Bitmap($"{System.Environment.CurrentDirectory}\\gamecourse\\floor_blue.png");
         }
 
         public void TryChangeColor()
@@ -59,7 +59,7 @@ namespace MyGame
 
             if (brokable)
             {
-                this.floorImg = new Bitmap("D:\\gamecourse\\floor_brokable.png");
+                this.floorImg = new Bitmap($"{System.Environment.CurrentDirectory}\\gamecourse\\floor_brokable.png");
             }
         }      
     }
