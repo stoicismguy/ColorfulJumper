@@ -39,7 +39,7 @@ namespace MyGame
         {
             this.X = x;
             this.Y = y;
-            Speed = 1.5f;
+            Speed = 1f;
             onPlatform = false;
             this.Size = 64;
             isAlive = true;

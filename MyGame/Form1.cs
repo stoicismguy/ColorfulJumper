@@ -72,7 +72,7 @@ namespace MyGame
             this.Text = "Colorful Jumper";
             timer1 = new System.Windows.Forms.Timer();
 
-            label2.Text = "Q/R - red/blue color\nSpace - jump\nCtrl - go down";
+            label2.Text = "Q/E - red/blue color\nSpace - jump\nCtrl - go down";
             label1.Font = label2.Font;
 
             timer1.Interval = 1;
@@ -85,7 +85,7 @@ namespace MyGame
         private void Update(object sender, EventArgs e)
         {
             if (MaxScore != 0)
-                label1.Text = "Score: " + player.Score.ToString() + " ,Record: " + MaxScore.ToString();
+                label1.Text = "Score: " + player.Score.ToString() + " ,your max: " + MaxScore.ToString();
             else
                 label1.Text = "Score: " + player.Score.ToString();
 
@@ -128,7 +128,6 @@ namespace MyGame
             foreach (var item in floors)
             {
                 item.brokableZone = (int)(1/player.Speed) * 20;
-                //if ((int)(Math.Abs(player.Y + player.Size - item.Y)) <= deltaHeight & item.X - deltaWidth <= player.X & player.X <= item.X + item.SizeX+ deltaWidth)
                 if (
                     (int)(player.Y + player.Size) <= (int)(item.Y + item.SizeY)
                     & (int)(player.Y + player.Size) >= (int)item.Y
